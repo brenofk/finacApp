@@ -10,9 +10,15 @@ type RoutesState = {
 }
 
 export default class Routes extends Component<RoutesProps, RoutesState> {
-    
+
     state: RoutesState = {
         loading: false,
         signed: false,
+    }
+
+    render () {
+        const {signed} = this.state;
+
+        return signed ? <View/> : <AuthRoutes></AuthRoutes>
     }
 }
